@@ -8,6 +8,11 @@ function calcularPesoLiquido() {
   // Calculando o peso líquido
   let pesoLiquido = pesoBruto - (quantidadeCaixas * taraTotal) - pesoPallet;
 
-  // Exibindo o resultado
-  document.getElementById('resultado').innerHTML = `Peso Líquido: ${pesoLiquido.toFixed(2)} kg`;
+  // Verificando se o resultado é um número válido
+  if (!isNaN(pesoLiquido)) {
+    // Exibindo o resultado
+    document.getElementById('resultado').innerHTML = `Peso Líquido: ${pesoLiquido.toFixed(2)} kg`;
+  } else {
+    document.getElementById('resultado').innerHTML = 'Preencha todos os campos corretamente.';
+  }
 }
